@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Entry | Guestbook</title>
+</head>
+<body>
+        <p><a href="/entries/new">New Entry</a> | <a href="/">List All Entries</a></p>
+        <hr>
+    <h2>New Entry</h2>
+
+    <form action="/entries/create" method="POST">
+        <label for="name">Your Name: <input type="text" name="name" id=""></label><br />
+        <label for="name">Your Email: <input type="email" name="email" id=""></label><br />
+        <label for="name">Title of Messsage: <input type="text" name="title" id=""></label><br />
+        <label for="name">Body of Messsage:<br />
+            <textarea name="message" id="" cols="30" rows="10"></textarea><br />
+        <hr>
+        <input type="submit" value="Save Entry">
+    </form>
+</body>
+</html>

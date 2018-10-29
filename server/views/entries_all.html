@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guestbook</title>
+</head>
+<body>
+
+    <p><a href="/entries/new">New Entry</a> | <a href="/">List All Entries</a></p>
+    <hr>
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Title</th>
+                <th>Message</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .Entries }}
+            <tr>
+                <td>{{ .Name }}</td>
+                <td>{{ .Email }}</td>
+                <td>{{ .Title }}</td>
+                <td>{{ .Message }}</td>
+                <td>
+                    <form action="/entries/delete" method="POST">
+                        <input type="hidden" name="id" value="{{ .ID }}">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+    
+</body>
+</html>
