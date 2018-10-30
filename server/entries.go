@@ -46,7 +46,7 @@ func (s *server) createEntry(c echo.Context) error {
 		return err
 	}
 
-	return c.Redirect(http.StatusTemporaryRedirect, "/")
+	return c.Redirect(302, "/")
 }
 
 func (s *server) deleteEntry(c echo.Context) error {
@@ -61,5 +61,5 @@ func (s *server) deleteEntry(c echo.Context) error {
 		return err
 	}
 
-	return c.Redirect(http.StatusTemporaryRedirect, "/")
+	return c.Redirect(302, "/")
 }
